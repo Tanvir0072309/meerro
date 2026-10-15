@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    height: 55px;
+    background: #fff;
+    border-bottom: 1px solid #f0e6f0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.topbar-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d1a3e;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+}
+
+.topbar-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: #b388b3;
+    margin-top: 2px;
+}
+
+.topbar-bc-icon,
+.topbar-bc-sep {
+    display: flex;
+    align-items: center;
+    color: #b388b3;
+}
+
+/* Clickable intermediate breadcrumb — e.g. "Employees" when on Add Employee page */
+.topbar-bc-link {
+    color: #9c27b0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.15s;
+    text-decoration: none;
+}
+
+.topbar-bc-link:hover {
+    color: #b5179e;
+    text-decoration: underline;
+}
+
+/* Last (active) breadcrumb — not clickable */
+.topbar-bc-current {
+    color: #5c4a6e;
+    font-weight: 500;
+}
+
+/* Right side */
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.topbar-date-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #5c4a6e;
+    background: #f5eaf5;
+    border-radius: 7px;
+    padding: 6px 12px;
+}
+
+.topbar-icon-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: #f5eaf5;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #5c4a6e;
+    transition: background 0.15s;
+}
+
+.topbar-icon-btn:hover {
+    background: #ede0f5;
+}
+
+.topbar-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #b5179e;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 1px 5px;
+    min-width: 16px;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.topbar-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #b5179e, #9c27b0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+}

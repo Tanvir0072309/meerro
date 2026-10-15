@@ -1,0 +1,994 @@
+/* ============================================
+   MEERRO VISION — AddEmployee.css
+   Theme: Purple/Pink (#b5179e, #9c27b0, #faf5fb)
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ══════════════════════════════════════
+   ROOT LAYOUT
+══════════════════════════════════════ */
+.ae-root {
+    font-family: 'DM Sans', sans-serif;
+    background: #faf5fb;
+    display: flex;
+    gap: 20px;
+    padding: 24px 24px 32px;
+    min-height: 100vh;
+    color: #2d1a3e;
+}
+
+/* ══════════════════════════════════════
+   MAIN PANEL
+══════════════════════════════════════ */
+.ae-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Page title */
+.ae-page-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #2d1a3e;
+    line-height: 1.2;
+}
+
+.ae-page-sub {
+    font-size: 13px;
+    color: #8a7a9b;
+    margin-top: 3px;
+}
+
+/* ══════════════════════════════════════
+   STEPPER
+══════════════════════════════════════ */
+.ae-stepper {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #f0e6f0;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(181, 23, 158, 0.05);
+}
+
+.ae-step {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    border-right: 1px solid #f0e6f0;
+    cursor: pointer;
+    transition: background 0.15s;
+    position: relative;
+}
+
+.ae-step:last-child {
+    border-right: none;
+}
+
+.ae-step:hover {
+    background: #fdf8fd;
+}
+
+.ae-step.active {
+    background: linear-gradient(135deg, #fdf0fc, #f8e8fb);
+}
+
+/* Step number circle */
+.ae-step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    flex-shrink: 0;
+    border: 2px solid #e0d0e8;
+    background: #fff;
+    color: #b388b3;
+    transition: all 0.2s;
+}
+
+.ae-step.active .ae-step-num {
+    background: linear-gradient(135deg, #b5179e, #9c27b0);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(181, 23, 158, 0.35);
+}
+
+.ae-step.done .ae-step-num {
+    background: #e8f5e9;
+    border-color: #a5d6a7;
+    color: #2e7d32;
+}
+
+/* Step labels */
+.ae-step-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.ae-step-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #8a7a9b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ae-step.active .ae-step-label {
+    color: #b5179e;
+}
+
+.ae-step.done .ae-step-label {
+    color: #2e7d32;
+}
+
+.ae-step-sub {
+    font-size: 10.5px;
+    color: #c4a0c4;
+    margin-top: 1px;
+}
+
+.ae-step.active .ae-step-sub {
+    color: #d070c4;
+}
+
+/* ══════════════════════════════════════
+   SECTION CARDS
+══════════════════════════════════════ */
+.ae-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #f0e6f0;
+    box-shadow: 0 1px 4px rgba(181, 23, 158, 0.04);
+    overflow: visible;
+}
+
+.ae-card-header {
+    padding: 16px 20px 14px;
+    border-bottom: 1px solid #f0e6f0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ae-card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f5eaf5, #ede0f5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9c27b0;
+    flex-shrink: 0;
+}
+
+.ae-card-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #2d1a3e;
+}
+
+.ae-card-sub {
+    font-size: 11.5px;
+    color: #8a7a9b;
+    margin-top: 2px;
+}
+
+.ae-card-body {
+    padding: 18px 20px;
+}
+
+/* ══════════════════════════════════════
+   FORM GRIDS
+══════════════════════════════════════ */
+.ae-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
+}
+
+.ae-grid-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+/* ══════════════════════════════════════
+   FORM FIELDS
+══════════════════════════════════════ */
+.ae-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+}
+
+.ae-label {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #5c4a6e;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.ae-required {
+    color: #b5179e;
+}
+
+.ae-input {
+    padding: 9px 12px;
+    border-radius: 8px;
+    border: 1px solid #f0e6f0;
+    background: #faf5fb;
+    font-size: 12.5px;
+    font-family: 'DM Sans', sans-serif;
+    color: #2d1a3e;
+    outline: none;
+    transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+    width: 100%;
+}
+
+.ae-input::placeholder {
+    color: #c4a0c4;
+}
+
+.ae-input:focus {
+    border-color: #b5179e;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(181, 23, 158, 0.08);
+}
+
+/* Input with icon */
+.ae-input-wrap {
+    position: relative;
+}
+
+.ae-input-icon {
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #c4a0c4;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.ae-input-wrap .ae-input {
+    padding-left: 34px;
+}
+
+/* Phone row */
+.ae-phone-row {
+    display: flex;
+    gap: 8px;
+}
+
+.ae-flag-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 9px 10px;
+    border-radius: 8px;
+    border: 1px solid #f0e6f0;
+    background: #faf5fb;
+    font-size: 13px;
+    cursor: pointer;
+    flex-shrink: 0;
+    color: #5c4a6e;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    transition: background 0.15s;
+}
+
+.ae-flag-btn:hover {
+    background: #f5eaf5;
+}
+
+/* ══════════════════════════════════════
+   CUSTOM SELECT
+══════════════════════════════════════ */
+.cust-select-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.sg-select-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 8px;
+    border: 1px solid #f0e6f0;
+    background: #faf5fb;
+    font-size: 12.5px;
+    font-family: 'DM Sans', sans-serif;
+    color: #2d1a3e;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.sg-select-btn:hover {
+    border-color: #e0d0e8;
+    background: #fff;
+}
+
+.cust-select-arrow {
+    display: flex;
+    align-items: center;
+    color: #b388b3;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+
+.cust-select-arrow.open {
+    transform: rotate(180deg);
+}
+
+/* Dropdown panel */
+.cust-dropdown {
+    background: #fff;
+    border: 1px solid #f0e6f0;
+    border-radius: 10px;
+    box-shadow: 0 8px 28px rgba(181, 23, 158, 0.14), 0 2px 10px rgba(0, 0, 0, 0.07);
+    padding: 5px;
+    animation: sgDropIn 0.14s ease;
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+.cust-dropdown::-webkit-scrollbar {
+    width: 4px;
+}
+
+.cust-dropdown::-webkit-scrollbar-thumb {
+    background: #e0c8e0;
+    border-radius: 4px;
+}
+
+@keyframes sgDropIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cust-dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-radius: 7px;
+    font-size: 12.5px;
+    font-family: 'DM Sans', sans-serif;
+    color: #2d1a3e;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.12s;
+    user-select: none;
+}
+
+.cust-dropdown-item:hover {
+    background: #faf5fb;
+}
+
+.cust-dropdown-item.selected {
+    background: #f5eaf5;
+    color: #9c27b0;
+    font-weight: 600;
+}
+
+.cust-dropdown-check {
+    display: flex;
+    align-items: center;
+    color: #b5179e;
+    flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   PHOTO UPLOAD
+══════════════════════════════════════ */
+.ae-photo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ae-photo-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f3e5f5, #e8d5f5);
+    border: 2px dashed #e0c8e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c4a0c4;
+    flex-shrink: 0;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.15s;
+    position: relative;
+}
+
+.ae-photo-circle:hover {
+    border-color: #b5179e;
+}
+
+.ae-photo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ae-photo-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ae-upload-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 8px;
+    border: 1px solid #f0e6f0;
+    background: #fff;
+    font-size: 12px;
+    font-family: 'DM Sans', sans-serif;
+    color: #5c4a6e;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    width: fit-content;
+}
+
+.ae-upload-btn:hover {
+    background: #faf5fb;
+    border-color: #e0d0e8;
+}
+
+.ae-photo-hint {
+    font-size: 10.5px;
+    color: #b388b3;
+}
+
+/* ══════════════════════════════════════
+   ROLE CARDS (Step 2)
+══════════════════════════════════════ */
+.ae-role-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.ae-role-card {
+    border: 2px solid #f0e6f0;
+    border-radius: 10px;
+    padding: 14px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.18s;
+    background: #fdf8fd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.ae-role-card:hover {
+    border-color: #d0a0d0;
+    background: #fdf0fc;
+}
+
+.ae-role-card.selected {
+    border-color: #b5179e;
+    background: linear-gradient(135deg, #fdf0fc, #f5eaf5);
+    box-shadow: 0 2px 10px rgba(181, 23, 158, 0.15);
+}
+
+.ae-role-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background: #f5eaf5;
+}
+
+.ae-role-card.selected .ae-role-icon {
+    background: rgba(181, 23, 158, 0.12);
+}
+
+.ae-role-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2d1a3e;
+}
+
+.ae-role-desc {
+    font-size: 10px;
+    color: #8a7a9b;
+    line-height: 1.4;
+}
+
+.ae-role-card.selected .ae-role-name {
+    color: #b5179e;
+}
+
+/* ══════════════════════════════════════
+   PERMISSION TOGGLES (Step 3)
+══════════════════════════════════════ */
+.ae-perm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #f0e6f0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #f0e6f0;
+}
+
+.ae-perm-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #fff;
+    transition: background 0.12s;
+}
+
+.ae-perm-row:hover {
+    background: #fdf8fd;
+}
+
+.ae-perm-label {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #2d1a3e;
+}
+
+.ae-perm-sub {
+    font-size: 11px;
+    color: #8a7a9b;
+    margin-top: 2px;
+}
+
+/* ══════════════════════════════════════
+   TOGGLE SWITCH
+══════════════════════════════════════ */
+.sg-toggle {
+    width: 40px;
+    height: 22px;
+    border-radius: 11px;
+    background: #e0d0e8;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    transition: background 0.2s;
+    padding: 0;
+}
+
+.sg-toggle.on {
+    background: linear-gradient(135deg, #b5179e, #9c27b0);
+}
+
+.sg-toggle-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.sg-toggle.on .sg-toggle-thumb {
+    transform: translateX(18px);
+}
+
+/* ══════════════════════════════════════
+   REVIEW GRID (Step 4)
+══════════════════════════════════════ */
+.ae-review-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.ae-review-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 14px;
+    border-bottom: 1px solid #faf5fb;
+    border-right: 1px solid #faf5fb;
+}
+
+.ae-review-row:nth-child(even) {
+    border-right: none;
+}
+
+.ae-review-label {
+    font-size: 10.5px;
+    color: #b388b3;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.ae-review-val {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #2d1a3e;
+}
+
+.ae-review-empty {
+    color: #c4a0c4;
+    font-weight: 400;
+}
+
+/* ══════════════════════════════════════
+   SUCCESS STATE
+══════════════════════════════════════ */
+.ae-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.ae-success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2e7d32;
+}
+
+.ae-success-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #2d1a3e;
+}
+
+.ae-success-sub {
+    font-size: 13px;
+    color: #8a7a9b;
+}
+
+/* ══════════════════════════════════════
+   BOTTOM BAR
+══════════════════════════════════════ */
+.ae-bottom-bar {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #f0e6f0;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 4px rgba(181, 23, 158, 0.04);
+}
+
+.ae-step-indicator {
+    font-size: 12px;
+    color: #b388b3;
+    font-weight: 600;
+}
+
+.ae-bottom-btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ae-cancel-btn {
+    padding: 9px 18px;
+    border-radius: 9px;
+    border: 1px solid #f0e6f0;
+    background: #fff;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    color: #8a7a9b;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.ae-cancel-btn:hover {
+    background: #faf5fb;
+}
+
+.ae-next-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 22px;
+    border-radius: 9px;
+    border: none;
+    background: linear-gradient(135deg, #b5179e, #9c27b0);
+    color: #fff;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(181, 23, 158, 0.32);
+    transition: opacity 0.15s, box-shadow 0.15s;
+}
+
+.ae-next-btn:hover {
+    opacity: 0.92;
+    box-shadow: 0 4px 16px rgba(181, 23, 158, 0.4);
+}
+
+/* ══════════════════════════════════════
+   RIGHT PANEL
+══════════════════════════════════════ */
+.ae-right {
+    width: 272px;
+    min-width: 272px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Right panel cards */
+.ae-rcard {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #f0e6f0;
+    box-shadow: 0 1px 4px rgba(181, 23, 158, 0.04);
+    overflow: hidden;
+}
+
+.ae-rcard-header {
+    padding: 12px 14px 10px;
+    border-bottom: 1px solid #f0e6f0;
+    font-size: 12px;
+    font-weight: 700;
+    color: #2d1a3e;
+}
+
+.ae-rcard-body {
+    padding: 12px 14px;
+}
+
+/* ══════════════════════════════════════
+   INVITE METHOD (right panel)
+══════════════════════════════════════ */
+.ae-invite-opt {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 11px 12px;
+    border-radius: 9px;
+    border: 1px solid #f0e6f0;
+    background: #fff;
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition: all 0.15s;
+}
+
+.ae-invite-opt:last-child {
+    margin-bottom: 0;
+}
+
+.ae-invite-opt.selected {
+    border-color: #b5179e;
+    background: linear-gradient(135deg, #fdf0fc, #f9eafb);
+}
+
+.ae-invite-radio {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #e0d0e8;
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.15s;
+}
+
+.ae-invite-opt.selected .ae-invite-radio {
+    border-color: #b5179e;
+}
+
+.ae-invite-radio-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #b5179e;
+    display: none;
+}
+
+.ae-invite-opt.selected .ae-invite-radio-dot {
+    display: block;
+}
+
+.ae-invite-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #2d1a3e;
+}
+
+.ae-invite-sub {
+    font-size: 11px;
+    color: #8a7a9b;
+    margin-top: 2px;
+}
+
+/* ══════════════════════════════════════
+   ROLE & PERMISSION INFO (right panel)
+══════════════════════════════════════ */
+.ae-perm-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.ae-perm-info-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #faf5fb;
+    font-size: 12px;
+    color: #2d1a3e;
+    font-weight: 500;
+}
+
+.ae-perm-info-row:last-child {
+    border-bottom: none;
+}
+
+.ae-perm-check {
+    color: #16a34a;
+    display: flex;
+    align-items: center;
+}
+
+/* ══════════════════════════════════════
+   BULK IMPORT (right panel)
+══════════════════════════════════════ */
+.ae-bulk-inner {
+    background: linear-gradient(135deg, #fdf0fc, #f5eaf5);
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ae-bulk-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #2d1a3e;
+}
+
+.ae-bulk-sub {
+    font-size: 11px;
+    color: #8a7a9b;
+    line-height: 1.5;
+}
+
+.ae-bulk-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, #b5179e, #9c27b0);
+    color: #fff;
+    font-size: 11.5px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 2px 8px rgba(181, 23, 158, 0.28);
+    transition: opacity 0.15s;
+}
+
+.ae-bulk-btn:hover {
+    opacity: 0.9;
+}
+
+/* ══════════════════════════════════════
+   TIPS (right panel)
+══════════════════════════════════════ */
+.ae-tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.ae-tip-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    font-size: 11.5px;
+    color: #5c4a6e;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.ae-tip-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #b5179e;
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+/* ══════════════════════════════════════
+   DIVIDER
+══════════════════════════════════════ */
+.ae-divider {
+    height: 1px;
+    background: #f0e6f0;
+    margin: 4px 0;
+}
+
+/* ══════════════════════════════════════
+   SCROLLBARS
+══════════════════════════════════════ */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #faf5fb;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e0c8e0;
+    border-radius: 4px;
+}
